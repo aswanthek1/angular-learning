@@ -1,0 +1,9 @@
+<li class="form-check d-flex justify-content-between ">
+    <label class="form-check-label" [ngClass]="cssClasses" >
+        <input type="checkbox" class="checkbox" [checked]="fulfiled"
+            (click)="toggleFulfiled()"> {{wishText}}
+    </label>
+    <div>
+        <button class="btn-close" (click)="removeWish()" ></button>
+    </div>
+</li>
