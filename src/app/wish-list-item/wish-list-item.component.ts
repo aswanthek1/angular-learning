@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import events from '../../shared/services/EventServices';
+import { WhishlistItem } from '../../shared/models/wishlistItem';
 
 @Component({
   selector: 'wish-list-item',
@@ -11,22 +12,23 @@ import events from '../../shared/services/EventServices';
 })
 export class WishListItemComponent {
 
-  @Input() wishText!: string;
-  @Input() fulfiled!: boolean;
+  // @Input() wishText!: string;
+  @Input() wish!: WhishlistItem;
+  // @Input() fulfiled!: boolean;
 
   @Output() fulfiledChange = new EventEmitter<boolean>();
 
   get cssClasses() {
-    return  this.fulfiled ? ['strikeOut', 'text-muted'] : []; 
+    return  this.wish.isCompleted ? ['strikeOut', 'text-muted'] : []; 
   }
 
   toggleFulfiled() {
     // item.isCompleted = !item.isCompleted
-    this.fulfiled = !this.fulfiled;
-    this.fulfiledChange.emit(this.fulfiled)
+    this.wish.isCompleted = !this.wish.isCompleted;
+    // this.fulfiledChange.emit(this.wish.isCompleted)
   }
 
   removeWish() {
-    events.emit('removeWish', this.wishText)
+    events.emit('removeWish', this.wish)
   }
 }

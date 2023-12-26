@@ -30,6 +30,8 @@ export class AppComponent {
     events.listen('removeWish', (wish:any) => {
       ////remove event here
       console.log(wish)
+      let index = this.items.indexOf(wish)
+      this.items.splice(index,1)
     })
   }
 
