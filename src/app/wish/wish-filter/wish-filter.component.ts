@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { WhishlistItem } from '../../shared/models/wishlistItem';
+import { WhishlistItem } from '../../../shared/models/wishlistItem';
 
 const filters = [
   (item:WhishlistItem) => item,
