@@ -1,8 +1,11 @@
+import { Injectable } from "@angular/core";
 import { Subject, Observable } from "rxjs";
 
 /// This service helps us to listen to events emiting for any component from any component.
-
-class EventService {
+@Injectable({
+    providedIn:'root'
+})///this will say this class can be injected to other classes in the entire application.
+export class EventService {
     private subject = new Subject();
 
     emit(eventName:string, payload:any) {
@@ -18,4 +21,4 @@ class EventService {
     }
 }
 
-export default new EventService();
+// export default new EventService();e

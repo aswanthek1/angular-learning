@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
 import { WishFilterComponent } from './wish-filter/wish-filter.component';
-import events from '../shared/services/EventServices';
+import {EventService} from '../shared/services/EventServices';
 
 
 
@@ -26,7 +26,7 @@ export class AppComponent {
   
   filter:any = () => {}
 
-  constructor() {
+  constructor(events:EventService) {
     events.listen('removeWish', (wish:any) => {
       ////remove event here
       console.log(wish)
