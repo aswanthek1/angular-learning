@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -16,7 +16,9 @@ import { WhishlistItem } from '../../shared/models/wishlistItem';
   templateUrl: './wish.component.html',
   styleUrl: './wish.component.css'
 })
-export class WishComponent {
+export class WishComponent implements AfterViewInit, OnInit, AfterViewChecked {
+  @ViewChild('afterViewChecker') afterViewChecker!: ElementRef;
+  @ViewChild(AddWishFormComponent) formComponet!: AddWishFormComponent;
   items : WhishlistItem[] = [];
   
   filter:any = () => {}
@@ -28,6 +30,13 @@ export class WishComponent {
       let index = this.items.indexOf(wish)
       this.items.splice(index,1)
     })
+  }
+  ngAfterViewChecked(): void {
+    console.log(this.formComponet.childCounter)
+  }
+  ngAfterViewInit(): void {
+    console.log(this.afterViewChecker)
+    this.afterViewChecker.nativeElement.innerHTML = 'After view text'
   }
   ngOnInit(): void {
     this.wishService.getWishes().subscribe(

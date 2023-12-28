@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class AddWishFormComponent {
 
   @Output() addWish = new EventEmitter<WhishlistItem>();
+  public childCounter:number = 0;
 
   newWishText = '';
 
@@ -19,5 +20,9 @@ export class AddWishFormComponent {
     // this.items.push(new WhishlistItem(this.newWishText))
     this.addWish.emit(new WhishlistItem(this.newWishText))
     this.newWishText = ''
+  }
+
+  incCounter() :void {
+    this.childCounter++
   }
 }
