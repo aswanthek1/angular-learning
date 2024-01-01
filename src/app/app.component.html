@@ -1,4 +1,6 @@
-<app-wish></app-wish>
+<!-- <app-wish></app-wish> -->
 
+    <app-search (searchTextChanged)="setSearchText($event)" ></app-search>
+    <app-product-list [searchText]="searchText" ></app-product-list>
 
 <!-- <app-contact></app-contact> -->
