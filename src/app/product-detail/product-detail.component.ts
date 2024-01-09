@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { ProductService } from '../../shared/services/product-service';
 import { SetBackground } from '../CustomDirectives/setBackground.directive';
+import { AppHoverDirective } from '../CustomDirectives/app-hover.directive';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule, SetBackground],
+  imports: [CommonModule, SetBackground, AppHoverDirective],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css',
 })
