@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, inject } from '@angular/core';
 import { ProductService } from '../../../shared/services/product-service';
+import { HighligtDirective } from '../../CustomDirectives/highligt.directive';
 
 @Component({
   selector: 'app-prodcut',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HighligtDirective],
   templateUrl: './prodcut.component.html',
   styleUrl: './prodcut.component.css'
 })
