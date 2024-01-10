@@ -1,7 +1,10 @@
+<div class="container mt-5" (click)="displayForm()"><button class="btn btn-info">Show Form</button></div>
+
 <form
      class="container p-5"
      [formGroup]="contactForm"
      (ngSubmit)="$event.preventDefault(); submitForm()"
+     *appIf="display"
 >
     <div class="mb-3">
         <label class="form-label">Your name</label>
