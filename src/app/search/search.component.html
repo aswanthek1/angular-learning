@@ -2,4 +2,4 @@
     <input class="ekart-search-product-input" [(ngModel)]="searchText" (input)="onSearchTextChanged()" >
     <button class="btn btn-search">Search</button>
 </div>
-<div class="ekart-search-result-for"><p><strong>Search result for:</strong> {{ searchText }}</p></div>
+<div class="ekart-search-result-for"><p [customClass]="{'custom-p2':true, 'custom-p':true}" ><strong>Search result for:</strong> {{ searchText }}</p></div>

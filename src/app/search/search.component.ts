@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CustomClassDirective } from '../CustomDirectives/custom-class.directive';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, CustomClassDirective],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
 })

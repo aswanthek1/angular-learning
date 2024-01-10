@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.highlight-product {
+    -webkit-box-shadow: 0 0 1px #000 inset;
+    -moz-box-shadow: 0 0 1px 3px #000 inset;
+    border: #efefef 2px solid;
+    box-shadow: 10px 10px 10px #cccccc;
+    transform: scale(1.05);
+}
+
+.disable-out-of-stock-product {
+    background-color: #28282B;
+    opacity: 0.5;
+}

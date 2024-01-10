@@ -28,3 +28,11 @@
     margin: 20px auto;
     padding: 10px 140px;
 }
+
+.custom-p {
+    text-decoration: underline;
+}
+
+.custom-p2 {
+    font-weight: bolder;
+}
